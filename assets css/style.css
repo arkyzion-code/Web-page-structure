@@ -123,6 +123,19 @@ p {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background-color: var(--color-surface);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-color: var(--color-border);
+  box-shadow: 0 4px 6px var(--color-border);
 }
 
 .navigation-list a {
@@ -477,13 +490,16 @@ a:hover {
 
 @media (max-width: 768px) {
   .site-header {
-    flex-direction: column;
-    gap: var(--space-sm);
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
   }
   .navigation-list {
-    flex-wrap: wrap;
-    gap: 1rem;
+    position: static;
+    flex-wrap: nowrap;
+    gap: 0.65rem;
+    padding: 0.55rem 0.85rem;
+    transform: none;
   }
   .hero-section {
     min-height: 50vh;
@@ -513,10 +529,12 @@ a:hover {
     width: min(100% - 1.5rem, var(--container-width));
   }
   .navigation-list {
-    gap: 0.75rem;
+    gap: 0.4rem;
+    padding: 0.4rem 0.55rem;
   }
   .navigation-list a {
-    font-size: 0.85rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
   }
   h1 {
     font-size: 2.5rem;
